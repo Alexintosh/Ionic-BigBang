@@ -1,0 +1,33 @@
+<ion-view title="Settings">
+  <ion-content class="has-header" overflow-scroll="true">
+	<div class="list">
+		<div class="item item-divider">
+			Notifications
+		</div>
+		<ul class="list">
+			<li class="item item-toggle">
+				Enable push notifications
+				<label class="toggle toggle-balanced">
+					<input type="checkbox" ng-change="save()" ng-model="set.notification.enabled" />
+					<div class="track">
+						<div class="handle"></div>
+					</div>
+				</label>
+			</li>
+		</ul>
+		
+		<div class="item item-divider">
+			Geolocation 
+		</div>
+
+		<ul class="list">
+			<li class="item item-checkbox">
+				<label class="checkbox">
+					<input type="checkbox" ng-model="set.geo.position" ng-change="save()" checked/>
+				</label>
+				Get my position automatically
+			</li>
+		</ul>
+	</div>
+  </ion-content>
+</ion-view>
