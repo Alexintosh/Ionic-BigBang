@@ -9,6 +9,11 @@
 		var vm = this;
 				
 		$scope.$on('$ionicView.afterEnter', function(){
+			init();
 		});
+
+		function init(){
+			//Do something	
+		}
 	}
 })();

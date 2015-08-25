@@ -29,14 +29,14 @@
 		function showPopup(notification){
 			var alertPopup = $ionicPopup.show({
 				template: notification.message,
-				title: 'Nuova segnalazione',
+				title: 'Push notification',
 			buttons: [
-				{ text: 'Dopo' },
+				{ text: 'Cancel' },
 				{
-					text: '<b>Leggi</b>',
+					text: 'Read it',
 					type: 'button-positive',
 					onTap: function(e) {
-						Utils.redirect('/app/alert/'+notification.payload.custom.custom.alertId);
+						Utils.redirect('/app/alert/'+notification.payload.custom.notification.id);
 					}
 				}
 			]
@@ -47,15 +47,12 @@
 			switch(notification.event) {
 				case 'registered':
 					if (notification.regid.length > 0 ) {
-						Api.enablePush(notification.regid)
-						.then(function(res){
-							$log.debug('Push enabled');
-						});
+						//Do something
 					}
 				break;
 
 				case 'message':
-					if( !notification.foreground ) Utils.redirect('/app/alert/'+notification.payload.custom.custom.alertId);
+					if( !notification.foreground ) Utils.redirect('/app/alert/'+notification.payload.custom.id);
 					else showPopup(notification);
 				break;
 
