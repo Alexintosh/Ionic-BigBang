@@ -1,4 +1,4 @@
-# Ionic-BigGang
+# Ionic-BigBang
 A starter ionic app with settings, notification services, maps helper and more.
 
 
